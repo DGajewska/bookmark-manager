@@ -1,9 +1,11 @@
+require 'pg'
+
 class BookmarkManager
 
   def initialize
-    require 'pg'
 
-    connection = PG.connect :dbname => 'bookmark_manager'
+    ENV['RACK_ENV'] == 'test' ? database = 'bookmark_manager_test' : database = 'bookmark_manager'
+    connection = PG.connect :dbname => database
 
     results = connection.exec "SELECT * FROM bookmarks"
 
