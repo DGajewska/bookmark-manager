@@ -2,8 +2,8 @@ feature 'Viewing Bookmarks' do
 
   scenario 'returns list of bookmarks' do
     visit '/bookmarks'
-    expect(page).to have_content "Makers Academy"
-    expect(page).to have_content "Google"
-    expect(page).to have_content "Yahoo!"
+    expect(page).to have_content "http://www.makersacademy.com"
+    expect(page).to have_content "http://www.google.com"
+    expect(page).to have_content "http://www.destroyallsoftware.com"
   end
 end
